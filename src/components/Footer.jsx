@@ -96,17 +96,16 @@ export function Footer({ onNavigate }) {
                                 {t('footer.connect')}
                             </h4>
                             <div className="flex space-x-3">
+                                {/* CHANGED: Uses button instead of <a> with href="#" to fix lint warning */}
                                 {[Facebook, Twitter, Instagram, Linkedin].map((Icon, idx) => (
-                                    <a
+                                    <button
                                         key={idx}
-                                        href="#"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
+                                        type="button"
                                         className="w-10 h-10 rounded-full bg-[#C6A664]/10 border border-[#C6A664]/30 hover:bg-[#C6A664] hover:text-[#4A0E0E] flex items-center justify-center transition-all duration-300 group"
-                                        aria-label={Icon.name}
+                                        aria-label={Icon.displayName || 'Social Media Link'}
                                     >
                                         <Icon className="w-5 h-5 text-[#D4AF37] group-hover:text-[#4A0E0E] transition-colors" />
-                                    </a>
+                                    </button>
                                 ))}
                             </div>
                         </div>
