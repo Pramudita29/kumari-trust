@@ -210,7 +210,7 @@ export function GetInvolvedPage() {
                   ))}
                 </Card>
                 <Card className="p-6 bg-gradient-to-r from-[#800000] to-[#600000] text-white shadow-lg">
-                  <h4 className="text-lg font-semibold mb-3">Tax Benefits</h4>
+                  <h4 className="text-lg font-semibold mb-3 text-white">Tax Benefits</h4>
                   <p className="text-sm text-gray-200">
                     All donations to Kumari Trust are tax-deductible under Nepali tax law. You will receive a tax receipt.
                   </p>
