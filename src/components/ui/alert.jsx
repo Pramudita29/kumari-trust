@@ -1,4 +1,3 @@
-import * as React from "react";
 import { cva } from "class-variance-authority";
 
 import { cn } from "./utils";
@@ -56,4 +55,5 @@ function AlertDescription({ className, ...props }) {
   );
 }
 
-export { Alert, AlertTitle, AlertDescription };
+export { Alert, AlertDescription, AlertTitle };
+

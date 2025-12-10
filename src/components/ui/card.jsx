@@ -26,13 +26,16 @@ function CardHeader({ className, ...props }) {
   );
 }
 
-function CardTitle({ className, ...props }) {
+// FIXED: Destructured `children` and placed them inside the <h4> tag explicitly
+function CardTitle({ className, children, ...props }) {
   return (
     <h4
       data-slot="card-title"
       className={cn("leading-none", className)}
       {...props}
-    />
+    >
+      {children}
+    </h4>
   );
 }
 
@@ -82,4 +85,3 @@ function CardFooter({ className, ...props }) {
 export {
   Card, CardAction, CardContent, CardDescription, CardFooter, CardHeader, CardTitle
 };
-

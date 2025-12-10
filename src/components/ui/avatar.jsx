@@ -1,4 +1,3 @@
-import * as React from "react";
 import * as AvatarPrimitive from "@radix-ui/react-avatar";
 import { cn } from "./utils";
 
@@ -38,4 +37,5 @@ function AvatarFallback({ className, ...props }) {
   );
 }
 
-export { Avatar, AvatarImage, AvatarFallback };
+export { Avatar, AvatarFallback, AvatarImage };
+

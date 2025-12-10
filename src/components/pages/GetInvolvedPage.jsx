@@ -15,7 +15,9 @@ import Textarea from '../ui/textarea';
 export function GetInvolvedPage() {
   const { t } = useLanguage();
   const [activeTab, setActiveTab] = useState('donate');
-  const [donationAmount, setDonationAmount] = useState('');
+
+  // REMOVED: const [donationAmount, setDonationAmount] = useState(''); 
+  // We don't need this because 'amount' is already stored in formData below.
 
   // Form data state
   const [formData, setFormData] = useState({
@@ -95,7 +97,6 @@ export function GetInvolvedPage() {
           proposal: '',
           message: ''
         });
-        setDonationAmount('');
       })
       .catch((err) => {
         console.error('EmailJS Error:', err);
@@ -166,10 +167,7 @@ export function GetInvolvedPage() {
                     type="number"
                     placeholder="Enter amount"
                     value={formData.amount}
-                    onChange={(e) => {
-                      handleChange(e);
-                      setDonationAmount(e.target.value);
-                    }}
+                    onChange={handleChange}
                     required
                   />
                   <div className="grid grid-cols-2 gap-3 mt-3">
@@ -179,7 +177,6 @@ export function GetInvolvedPage() {
                         type="button"
                         variant="outline"
                         onClick={() => {
-                          setDonationAmount(option.amount.toString());
                           setFormData((prev) => ({ ...prev, amount: option.amount.toString() }));
                         }}
                         className="border-[#D4AF37] text-[#800000] hover:bg-[#D4AF37] hover:text-white"
