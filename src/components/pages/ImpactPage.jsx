@@ -1,11 +1,9 @@
 import { motion } from 'framer-motion';
-import { Quote } from 'lucide-react';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { gradients } from '../../lib/styles';
 import { CounterAnimation } from '../CounterAnimation';
 import ImageWithFallback from '../figma/ImageWithFallback';
 import { Card } from '../ui/card';
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '../ui/carousel';
 
 export function ImpactPage() {
     const { t } = useLanguage();
@@ -47,27 +45,6 @@ export function ImpactPage() {
             description: 'Building sustainable water systems has transformed daily life for thousands. Families no longer walk hours for clean water, and waterborne diseases have decreased significantly.',
             image: 'https://images.unsplash.com/photo-1580921130259-5048f1409ace?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxOZXBhbCUyMHJ1cmFsJTIwdmlsbGFnZXxlbnwxfHx8fDE3NjI3NjU1NDR8MA&ixlib=rb-4.1.0&q=80&w=1080',
             stats: ['20+ water systems built', '10,000+ people served', '80% reduction in waterborne illness'],
-        },
-    ];
-
-    const testimonials = [
-        {
-            name: 'Dr. Ramesh Thapa',
-            role: 'Chief Medical Officer, Karnali Health Post',
-            quote: 'The medical equipment and supplies donated by Kumari Trust have transformed our ability to serve patients. We can now handle emergencies that previously required long journeys to distant hospitals.',
-            image: 'https://images.unsplash.com/photo-1563233269-7e86880558a7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoZWFsdGhjYXJlJTIwaG9zcGl0YWwlMjBtZWRpY2FsfGVufDF8fHx8MTc2Mjg0NjgwMHww&ixlib=rb-4.1.0&q=80&w=1080',
-        },
-        {
-            name: 'Maya Gurung',
-            role: 'Teacher, Rural Primary School',
-            quote: 'Our students now have access to computers and modern learning materials. The change in their enthusiasm and performance has been incredible. Education is truly transforming our community.',
-            image: 'https://images.unsplash.com/photo-1666281269793-da06484657e8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlZHVjYXRpb24lMjBjaGlsZHJlbiUyMGNsYXNzcm9vbXxlbnwxfHx8fDE3NjI3NjI1OTR8MA&ixlib=rb-4.1.0&q=80&w=1080',
-        },
-        {
-            name: 'Bir Bahadur Shah',
-            role: 'Community Leader, Jajarkot',
-            quote: 'The free ambulance service has saved countless lives in our district. Knowing that help is just a phone call away has given our community tremendous peace of mind.',
-            image: 'https://images.unsplash.com/photo-1529209076408-5a115ec9f1c6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxOZXBhbCUyMGNvbW11bml0eSUyMHBlb3BsZXxlbnwxfHx8fDE3NjI3NjM2Mjh8MA&ixlib=rb-4.1.0&q=80&w=1080',
         },
     ];
 
@@ -173,59 +150,7 @@ export function ImpactPage() {
                 </div>
             </section>
 
-            {/* Testimonials */}
-            <section className="py-16 md:py-20 bg-gradient-to-b from-[#800000] to-[#600000] text-white relative overflow-hidden">
-                <div className="absolute inset-0 mandala-bg opacity-10" />
 
-                <div className="container mx-auto px-4 relative z-10">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className="text-center mb-12"
-                    >
-                        <h2 className="text-3xl md:text-4xl font-semibold text-white mb-4">{t('impact.testimonials')}</h2>
-                        <div className="gold-divider mx-auto" />
-                    </motion.div>
-                    <div className="max-w-5xl mx-auto">
-                        <Carousel className="w-full">
-                            <CarouselContent>
-                                {testimonials.map((testimonial, index) => (
-                                    <CarouselItem key={index}>
-                                        <Card className="bg-white/10 backdrop-blur-md border-[#D4AF37]/30 p-6 md:p-12 mx-2 md:mx-0">
-                                            <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-center">
-                                                <div className="relative flex-shrink-0">
-                                                    <div className="w-20 h-20 md:w-28 md:h-28 rounded-full overflow-hidden border-4 border-[#D4AF37]">
-                                                        <ImageWithFallback
-                                                            src={testimonial.image}
-                                                            alt={testimonial.name}
-                                                            className="w-full h-full object-cover"
-                                                        />
-                                                    </div>
-                                                    <div className="absolute -top-2 -left-2 w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#D4AF37] flex items-center justify-center">
-                                                        <Quote className="w-4 h-4 md:w-5 md:h-5 text-white" />
-                                                    </div>
-                                                </div>
-                                                <div className="flex-1 text-center md:text-left">
-                                                    <p className="text-base md:text-xl text-white mb-6 italic leading-relaxed">"{testimonial.quote}"</p>
-                                                    <div>
-                                                        <p className="text-[#D4AF37] font-semibold text-lg">{testimonial.name}</p>
-                                                        <p className="text-sm text-gray-300">{testimonial.role}</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </Card>
-                                    </CarouselItem>
-                                ))}
-                            </CarouselContent>
-                            <div className="hidden md:block">
-                                <CarouselPrevious />
-                                <CarouselNext />
-                            </div>
-                        </Carousel>
-                    </div>
-                </div>
-            </section>
 
             {/* Regional Impact Map Section */}
             <section className="py-16 md:py-20 bg-white">
