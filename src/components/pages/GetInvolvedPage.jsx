@@ -9,7 +9,7 @@ import { useLanguage } from '../../contexts/LanguageContext';
 import { Button } from '../ui/button';
 import { Card } from '../ui/card';
 import { Input } from '../ui/input';
-import { Label } from '../ui/label';
+// I removed the unused 'Label' import here to fix the build warning
 import Textarea from '../ui/textarea';
 
 export function GetInvolvedPage() {
