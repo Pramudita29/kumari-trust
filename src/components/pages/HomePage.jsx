@@ -211,13 +211,6 @@ export function HomePage({ onNavigate }) {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button
                 size="lg"
-                onClick={() => onNavigate('getInvolved')}
-                className="w-full sm:w-auto bg-white text-[#4A0E0E] font-semibold px-8 py-4 rounded-full hover:bg-[#C6A664] hover:text-white transition-all duration-300"
-              >
-                Donate Now
-              </Button>
-              <Button
-                size="lg"
                 variant="outline"
                 onClick={() => onNavigate('contact')}
                 className="w-full sm:w-auto border-2 border-white text-white px-8 py-4 rounded-full hover:bg-white hover:text-[#4A0E0E] transition-all duration-300"
